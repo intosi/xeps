@@ -105,7 +105,7 @@
 ]]></example>
   </section2>
   <section2 topic='Data' anchor='usecase_data'>
-    <p>Data references are a generic reference without additional information. The URI points to an 'item' that is able to be fetched. This is useful for, for example, fetching an item from pubsub, as in the example below. TODO: check URI syntax for refering to a pubsub item.</p>
+    <p>Data references are a generic reference without additional information. The URI points to an 'item' that is able to be fetched. This is useful for, for example, fetching an item from pubsub, as in the example below.</p>
     <example caption='A MIX Channel sends a message that a new FDP form has been submitted elsewhere'><![CDATA[
 <message type='groupchat'
          id='sotehu-bthbtp32h4'
@@ -114,7 +114,7 @@
   <body>Form received</body>
   <reference xmlns='urn:xmpp:reference:0'
              type='data'
-             uri='xmpp:fdp.shakespeare.lit?node=fdp/submitted/stan.isode.net/accidentreport&item=ndina872be'/>
+             uri='xmpp:fdp.shakespeare.lit?;node=fdp/submitted/stan.isode.net/accidentreport;item=ndina872be'/>
 </message>
 ]]></example>
   </section2>
@@ -127,10 +127,10 @@
          to='romeo@montegue.lit/30d3d8'>
   <reference xmlns='urn:xmpp:reference:0'
              type='data'
-             anchor='xmpp:balcony@channels.shakespeare.lit?node=messages&item=bnhob'
+             anchor='xmpp:balcony@channels.shakespeare.lit?;node=messages;item=bnhob'
              begin='72'
              end='78'
-             uri='xmpp:fdp.shakespeare.lit?node=fdp/submitted/stan.isode.net/accidentreport&item=ndina872be'/>
+             uri='xmpp:fdp.shakespeare.lit?;node=fdp/submitted/stan.isode.net/accidentreport;item=ndina872be'/>
 </message>
 ]]></example>
   </section2>
