@@ -106,6 +106,7 @@
   </section2>
   <section2 topic='Data' anchor='usecase_data'>
     <p>Data references are a generic reference without additional information. The URI points to an 'item' that is able to be fetched. This is useful for, for example, fetching an item from pubsub, as in the example below.</p>
+    <p>To aid applications in determining whether it wants to retrieve the contents referenced, additional information MAY be provided. Information on PubSub item payloads MAY be provided by including a 'namespace', a 'name' attribute, or both.<p>
     <example caption='A MIX Channel sends a message that a new FDP form has been submitted elsewhere'><![CDATA[
 <message type='groupchat'
          id='sotehu-bthbtp32h4'
@@ -114,7 +115,22 @@
   <body>Form received</body>
   <reference xmlns='urn:xmpp:reference:0'
              type='data'
-             uri='xmpp:fdp.shakespeare.lit?;node=fdp/submitted/stan.isode.net/accidentreport;item=ndina872be'/>
+             uri='xmpp:fdp.shakespeare.lit?;node=fdp/submitted/stan.isode.net/accidentreport;item=ndina872be'
+             namespace='urn:xmpp:fdp:0'/>
+</message>
+]]></example>
+    <p>References MAY include attributes specifying the 'content-type' and 'size' of the resource, which will help implementations make decisions on whether to automatically fetch the resource.</p>
+    <example caption='A MIX Channel sends a message with a cat image'><![CDATA[
+<message type='groupchat'
+         id='sotehu-bthbtp32h5'
+         from='balcony@channels.shakespeare.lit'
+         to='romeo@montegue.lit/30d3d8'>
+  <body>Check out this lovely cat.</body>
+  <reference xmlns='urn:xmpp:reference:0'
+             type='data'
+             uri='https://example.com/cat.jpg'
+             content-type='image/jpeg'
+             size='32768'/>
 </message>
 ]]></example>
   </section2>
@@ -122,7 +138,7 @@
     <p>Sometimes it's desirable to annotate a reference in a previous message. An example of this might be where a MIX channel asynchronously adds information about references made in previous messages by users. In this case the message MUST NOT contain a body. Here the anchor attribute is used to provide a URI to the previous message. TODO: URI scheme for messages.</p>
     <example caption='A MIX Channel annotates a previous user message'><![CDATA[
 <message type='groupchat'
-         id='sotehu-bthbtp32h5'
+         id='sotehu-bthbtp32h6'
          from='balcony@channels.shakespeare.lit'
          to='romeo@montegue.lit/30d3d8'>
   <reference xmlns='urn:xmpp:reference:0'
