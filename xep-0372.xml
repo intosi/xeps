@@ -98,7 +98,7 @@
   <body>But, soft! what light through yonder window breaks? It is the east, and Juliet is the sun.</body>
   <reference xmlns='urn:xmpp:reference:0'
              begin='72'
-             end='78'
+             end='77'
              type='mention'
              uri='xmpp:juliet@capulet.lit'/>
 </message>
@@ -129,7 +129,7 @@
              type='data'
              anchor='xmpp:balcony@channels.shakespeare.lit?;node=messages;item=bnhob'
              begin='72'
-             end='78'
+             end='77'
              uri='xmpp:fdp.shakespeare.lit?;node=fdp/submitted/stan.isode.net/accidentreport;item=ndina872be'/>
 </message>
 ]]></example>
